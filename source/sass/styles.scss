@@ -1,0 +1,7 @@
+
+@use "variaveis";
+@import "reset-grid";
+
+body {
+  background-color: variaveis.$cor1;
+    }

@@ -1,0 +1,19 @@
+{
+  "name": "le-scone",
+  "version": "1.0.0",
+  "description": "Esse Repositório foi destinado para a criação do Projeto Le-Scone que faz parte do curso de SASS da origamid. Para prática ;  vamos trabalhar com gulp dentro desse Projeto.",
+  "main": "index.js",
+  "scripts": { 
+    "dev": "gulp watch",
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.2"
+  }
+}
