@@ -1,0 +1,147 @@
+@forward "./_variaveis";
+
+//Variáveis de Grid
+$cols: 12;
+$gutter: 20px;
+$ultra: 1201px;
+$desktop: 1200px;
+$tablet: 760px;
+$mobile: 480px;
+
+// Mixins de Media Queries
+@mixin device($size) {
+  @if $size == ultra {
+    @media (min-width: $ultra) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  }
+}
+
+//Função do Grid
+
+@function grid($col, $offset: false) {
+  $width: calc($col / $cols * 100) + "%";
+  $result: calc(#{$width} - #{$gutter});
+  @if $offset == offset {
+    $gutter: #{$gutter} / 2;
+    $result: calc(#{$width} + #{$gutter});
+  }
+  @return $result;
+}
+// Gerar as classes do Grid
+@for $i from 1 through $cols {
+  .grid-#{$i} {
+    width: grid($i);
+  }
+}
+
+// Estrutura do Grid
+@mixin grid-structure {
+  float: left;
+  min-height: 1px;
+  margin-left: calc($gutter / 2);
+  margin-right: calc($gutter/ 2);
+  @include device(mobile) {
+    width: 100%;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+[class^="grid-"] {
+  @include grid-structure;
+}
+
+// Gerar as classes do offset
+@for $i from 1 through $cols {
+  .ofsset-#{$i} {
+    margin-left: grid($i, offset);
+    @extend %offset;
+  }
+}
+@include device(mobile) {
+  %offset {
+    margin-left: 0px;
+  }
+}
+// Mixins de Clear Fix
+@mixin clearfix {
+  &::after,
+  &::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Mixin do container
+
+@mixin container {
+  max-width: $desktop;
+  margin: 0px auto;
+  position: relative;
+  @include device(tablet) {
+    max-width: $tablet;
+  }
+  @include device(mobile) {
+    max-width: $mobile;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include clearfix;
+}
+.container {
+  @include container;
+}
+
+@mixin row {
+  position: relative;
+  margin-left: -#{$gutter} / 2;
+  margin-right: -#{$gutter} / 2;
+  @include device(mobile) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  @include clearfix;
+}
+.row {
+  @include row;
+}
+
+@function em($pixel, $contexto: 16) {
+  @return $pixel / $contexto + "em";
+}
+
+// Mixins de fontes
+@mixin estilo-1($size) {
+  font-family: $fonte-1;
+  @if $size == 18 {
+    font-size: em(18);
+    line-height: em(30, 18);
+  }
+}
+
+@mixin estilo-2($size) {
+  font-family: $fonte-2;
+  @if $size == 18 {
+    font-size: em(18);
+    line-height: em(30, 18);
+  }
+  @else if $size == 24 {
+    font-size: em(24);
+    line-height: em(30, 24);
+  }
+}
