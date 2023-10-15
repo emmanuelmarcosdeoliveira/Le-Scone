@@ -5,7 +5,7 @@ $cols: 12;
 $gutter: 20px;
 $ultra: 1201px;
 $desktop: 1200px;
-$tablet: 760px;
+$tablet: 820px;
 $mobile: 480px;
 
 // Mixins de Media Queries
@@ -122,8 +122,13 @@ $mobile: 480px;
 }
 
 @function em($pixel, $contexto: 16) {
-  @return $pixel / $contexto + "em";
+  @return calc($pixel / $contexto) + "em";
 }
+
+
+// Variaveis de Fonte
+$fonte-1: 'PT Mono', monospace;
+$fonte-2: 'Aref Ruqaa', serif;
 
 // Mixins de fontes
 @mixin estilo-1($size) {
@@ -145,3 +150,4 @@ $mobile: 480px;
     line-height: em(30, 24);
   }
 }
+
