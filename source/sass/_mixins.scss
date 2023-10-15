@@ -119,7 +119,7 @@ $mobile: 480px;
 }
 .row {
   @include row;
-}
+    }
 
 @function em($pixel, $contexto: 16) {
   @return calc($pixel / $contexto) + "em";
@@ -151,3 +151,7 @@ $fonte-2: 'Aref Ruqaa', serif;
   }
 }
 
+// Mixins de Sombra 
+@mixin sombra($shadow...) {
+  box-shadow: $shadow; 
+} 
