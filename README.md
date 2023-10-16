@@ -3,7 +3,7 @@
 <div align="center">
 
 [Descrição](#--descrição-do-projeto-) |
-[Características]()|
+[Características](%EF%B8%8F-características)|
 [Como executar esse projeto ?](#%EF%B8%8F-como-executar-esse-projeto-) |
 [Deploy](#%EF%B8%8Fdeploy) |
 [Referências](#-referências-) |
@@ -47,7 +47,7 @@
 <h2> Video 📽️ de Demostração do Projeto</h2>
 
 
-
+https://github.com/emmanuelmarcosdeoliveira/Le-Scone/assets/116108389/22fd478d-f7cc-4269-88bf-03e300c747c4
 
 
 </div>
