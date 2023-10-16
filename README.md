@@ -3,7 +3,7 @@
 <div align="center">
 
 [Descrição](#--descrição-do-projeto-) |
-[Características](%EF%B8%8F-características)|
+[Características](#%EF%B8%8F-características)|
 [Como executar esse projeto ?](#%EF%B8%8F-como-executar-esse-projeto-) |
 [Deploy](#%EF%B8%8Fdeploy) |
 [Referências](#-referências-) |
