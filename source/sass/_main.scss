@@ -1,4 +1,6 @@
-@use "./mixins";
+
+@use "./mixins" as m;
+
 
 * {
   margin: 0;
@@ -13,10 +15,10 @@ img {
 }
 
 body {
-  background-color: mixins.$cor-2;
-  border: 10px solid mixins.$cor-3;
-  color: mixins.$cor-4;
-  @include mixins.device(mobile) {
+  background-color: m.$cor-2;
+  border: 10px solid m.$cor-3;
+  color: m.$cor-4;
+  @include m.device(mobile) {
     border: none;
   }
 }
@@ -26,20 +28,24 @@ img {
   max-width: 100%;
 }
 .titulo {
-  @include mixins.estilo-1(18);
+@include m.estilo-1(18);
   text-transform: uppercase;
-  @include mixins.device(mobile) {
+  @include m.device(mobile) {
+
+  
     margin-bottom: 40px;
   }
   &::after {
     content: "";
     display: block;
-    background: mixins.$cor-4;
+    background: m.$cor-4;
+   
+
     width: 75%;
     float: right;
     height: 2px;
     margin-top: 14px;
-    @include mixins.device(tablet) {
+   @include m.device(tablet) {
       width: 50%;
     }
   }
@@ -48,3 +54,4 @@ p {
   font-size: 18px;
   font-family: "PT Mono", monospace;
 }
+
