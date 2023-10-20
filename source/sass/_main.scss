@@ -1,4 +1,6 @@
+
 @use "./mixins" as m;
+
 
 * {
   margin: 0;
@@ -26,20 +28,24 @@ img {
   max-width: 100%;
 }
 .titulo {
-  @include m.estilo-1(18);
+@include m.estilo-1(18);
   text-transform: uppercase;
   @include m.device(mobile) {
+
+  
     margin-bottom: 40px;
   }
   &::after {
     content: "";
     display: block;
     background: m.$cor-4;
+   
+
     width: 75%;
     float: right;
     height: 2px;
     margin-top: 14px;
-    @include m.device(tablet) {
+   @include m.device(tablet) {
       width: 50%;
     }
   }
