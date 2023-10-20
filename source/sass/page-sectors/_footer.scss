@@ -1,0 +1,28 @@
+@use "../mixins" as m;
+
+footer {
+  padding: 20px 0;
+  background: m.$cor-4;
+  @include m.sombra(0 0 0 10px m.$cor-4);
+  p {
+    color: m.$cor-3;
+    text-align: center;
+  }
+  a {
+    color: m.$cor-3;
+    display: block;
+    transition: 0.3s;
+    padding-bottom: 10px;
+    &:hover {
+      color: m.$cor-0;
+    }
+    img {
+      float: right;
+      @include m.device(mobile) {
+        float: none;
+        margin: 20px auto;
+      }
+    }
+  }
+}
+

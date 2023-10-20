@@ -4,7 +4,7 @@ const imagemin = require("gulp-imagemin");
 
 function compilaSass() {
   return gulp
-    .src("./source/sass/**.scss")
+    .src("./source/sass/**/*.scss")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(gulp.dest("./dist/css/"));
 }
@@ -18,5 +18,5 @@ function comprimeImagens() {
 exports.default = gulp.parallel(compilaSass, comprimeImagens);
 
 exports.watch = function () {
-  gulp.watch("./source/sass/*.scss", gulp.parallel(compilaSass));
+  gulp.watch("./source/sass/**/*.scss", gulp.parallel(compilaSass));
 };

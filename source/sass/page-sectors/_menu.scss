@@ -1,8 +1,8 @@
-@use "./mixins";
+@use "../mixins" as m;
 .menu {
   margin-top: 120px;
   margin-bottom: 120px;
-  @include mixins.device(mobile) {
+  @include m.device(mobile) {
     margin-top: 60px;
     margin-bottom: 60px;
   }
@@ -10,7 +10,7 @@
 .menu-item {
   margin-bottom: 60px;
   h2 {
-    @include mixins.estilo-2(24);
+    @include m.estilo-2(24);
     margin-bottom: 1em;
   }
   li {
@@ -18,29 +18,29 @@
     line-height: 1.4;
   }
   span {
-    font-family: mixins.$fonte-2;
-    color: mixins.$cor-3;
+    font-family: m.$fonte-2;
+    color: m.$cor-3;
     display: inline-block;
     width: 70px;
     text-align: right;
     margin-right: 10px;
     margin-left: -80px;
-    @include mixins.device(mobile) {
+    @include m.device(mobile) {
       margin-left: 0px;
       width: auto;
     }
   }
   img {
     border-radius: 50%;
-    border: 10px solid mixins.$cor-3;
+    border: 10px solid m.$cor-3;
     position: absolute;
     right: 0px;
     margin-top: 50px;
-    @include mixins.device(tablet) {
+    @include m.device(tablet) {
       right: 60px;
       margin-top: 25px;
     }
-    @include mixins.device(mobile) {
+    @include m.device(mobile) {
       width: 120px;
       margin-top: 20px;
       right: 30px;

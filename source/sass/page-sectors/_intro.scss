@@ -1,17 +1,17 @@
-@use "./mixins";
+@use "../mixins" as m;
 
 .intro {
   margin-top: 60px;
-  @include mixins.device(mobile) {
+  @include m.device(mobile) {
     margin-top: 20px;
   }
   .intro-info {
-    border-right: 2px solid mixins.$cor-4;
+    border-right: 2px solid m.$cor-4;
     max-width: 320px;
     p {
       padding-top: 10px;
       &:first-child {
-        border-bottom: 2px solid mixins.$cor-4;
+        border-bottom: 2px solid m.$cor-4;
         padding-bottom: 10px;
       }
     }
@@ -19,8 +19,8 @@
 }
 
 .intro-telefone {
-  color: mixins.$cor-3;
-  @include mixins.device(mobile) {
+  color: m.$cor-3;
+  @include m.device(mobile) {
     margin-bottom: 40px;
   }
   &::after {
@@ -29,8 +29,8 @@
     margin-top: 200px;
     font-size: 220px;
     letter-spacing: -90px;
-    color: mixins.$cor-4;
-    @include mixins.device(tablet) {
+    color: m.$cor-4;
+    @include m.device(tablet) {
       margin-top: 80px;
       font-size: 160px;
       letter-spacing: -70px;
@@ -45,18 +45,11 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: mixins.$cor-1;
+  background: m.$cor-1;
   border-radius: 50%;
   margin-left: 30px;
 }
 .intro-foto {
-  border: 10px solid mixins.$cor-3;
+  border: 10px solid m.$cor-3;
   width: 100%;
-  }
-
-
-
-
-
-
-
+}

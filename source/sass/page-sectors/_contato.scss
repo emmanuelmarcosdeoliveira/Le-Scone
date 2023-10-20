@@ -1,9 +1,9 @@
-@use "./mixins";
+@use "../mixins" as m;
 
 .contato {
   margin-top: 120px;
   margin-bottom: 120px;
-  @include mixins.device(mobile) {
+  @include m.device(mobile) {
     margin-top: 60px;
     margin-bottom: 60px;
   }
@@ -20,17 +20,17 @@
     font-size: 18px;
     font-family: "PT Mono", monospace;
     line-height: 1.4;
-    color: mixins.$cor-4;
+    color: m.$cor-4;
     width: 100%;
     padding: 0 5px;
     height: 40px;
-    border: 2px solid mixins.$cor-3;
+    border: 2px solid m.$cor-3;
     background-color: transparent;
     margin-bottom: 1em;
     &:hover,
     &:focus {
       outline: none;
-      border-color: mixins.$cor-4;
+      border-color: m.$cor-4;
     }
   }
   textarea {
@@ -43,29 +43,29 @@ input.button {
   line-height: 1.4;
   font-family: "PT Mono", monospace;
   cursor: pointer;
-  color: mixins.$cor-4;
+  color: m.$cor-4;
   text-transform: uppercase;
-  border: 2px solid mixins.$cor-3;
+  border: 2px solid m.$cor-3;
   background: transparent;
   display: block;
   width: 200px;
   padding-top: 5px;
-  @include mixins.sombra(5px 5px 0 -2px mixins.$cor-3, 5px 5px 0 mixins.$cor-2);
+  @include m.sombra(5px 5px 0 -2px m.$cor-3, 5px 5px 0 m.$cor-2);
   transition: 0.3s;
   &:hover {
-    @include mixins.sombra(
-      3px 3px 0 -2px mixins.$cor-3,
-      3px 3px 0 mixins.$cor-2
+    @include m.sombra(
+      3px 3px 0 -2px m.$cor-3,
+      3px 3px 0 m.$cor-2
     );
   }
 }
 
 .contato-info {
   display: inline-block;
-  color: mixins.$cor-4;
+  color: m.$cor-4;
   margin-top: 2em;
   margin-bottom: 3em;
-  @include mixins.device(ultra) {
+  @include m.device(ultra) {
     float: right;
     text-align: right;
     margin-top: -3em;
@@ -73,10 +73,17 @@ input.button {
 }
 .contato-mapa {
   display: block;
-  @include mixins.sombra(0 0 0 10px mixins.$cor-3);
+  @include m.sombra(0 0 0 10px m.$cor-3);
   clear: both;
   margin-right: 10px;
   img {
     width: 100%;
   }
 }
+
+
+
+
+
+
+

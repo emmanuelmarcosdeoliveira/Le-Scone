@@ -1,10 +1,12 @@
-@use "./mixins";
+@use "./mixins" as m;
 @use "./main";
 // pages sectors
-@use "./intro";
-@use "./menu";
-@use "./contato";
-@use "./footer";
+@use "./page-sectors/intro";
+@use "./page-sectors/menu";
+@use "./page-sectors/contato";
+@use "./page-sectors/footer";
+
+
 
 
 
